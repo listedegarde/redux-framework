@@ -137,7 +137,7 @@ if ( ! class_exists( 'ReduxFramework_link_color' ) ) {
 
             $style = array();
 
-            $mode = ( isset( $this->field['mode'] ) && ! empty( $this->field['mode'] ) ? $this->field['mode'] : 'color' );
+            $mode = ( isset( $this->field['output'] ) && ! empty( $this->field['output'] ) && ! is_numeric( key( $this->field['output'] ) ) ? key( $this->field['output'] ) : 'color' );
 
             if ( ! empty( $this->value['regular'] ) && $this->field['regular'] === true && $this->field['default']['regular'] !== false ) {
                 $style[] = $mode . ':' . $this->value['regular'] . ';';
