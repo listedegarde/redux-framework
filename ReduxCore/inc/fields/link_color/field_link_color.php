@@ -137,20 +137,22 @@ if ( ! class_exists( 'ReduxFramework_link_color' ) ) {
 
             $style = array();
 
+            $mode = ( isset( $this->field['mode'] ) && ! empty( $this->field['mode'] ) ? $this->field['mode'] : 'color' );
+
             if ( ! empty( $this->value['regular'] ) && $this->field['regular'] === true && $this->field['default']['regular'] !== false ) {
-                $style[] = 'color:' . $this->value['regular'] . ';';
+                $style[] = $mode . ':' . $this->value['regular'] . ';';
             }
 
             if ( ! empty( $this->value['visited'] ) && $this->field['visited'] === true && $this->field['default']['visited'] !== false ) {
-                $style['visited'] = 'color:' . $this->value['visited'] . ';';
+                $style['visited'] = $mode . ':' . $this->value['visited'] . ';';
             }
 
             if ( ! empty( $this->value['hover'] ) && $this->field['hover'] === true && $this->field['default']['hover'] !== false ) {
-                $style['hover'] = 'color:' . $this->value['hover'] . ';';
+                $style['hover'] = $mode . ':' . $this->value['hover'] . ';';
             }
 
             if ( ! empty( $this->value['active'] ) && $this->field['active'] === true && $this->field['default']['active'] !== false ) {
-                $style['active'] = 'color:' . $this->value['active'] . ';';
+                $style['active'] = $mode . ':' . $this->value['active'] . ';';
             }
 
             if ( ! empty( $style ) ) {
